@@ -13,6 +13,14 @@ import regex as re
 import logging
 logger = logging.getLogger('azure.core.pipeline.policies.http_logging_policy').setLevel(logging.WARNING)
 
+hide_menu="""
+<style>
+#MainMenu{
+visibility:hidden;
+}
+</style>
+"""
+
 def check_deployment():
     # Check if the deployment is working
     #\ 1. Check if the llm is working
@@ -169,6 +177,7 @@ try:
 	 Embedding testing application.
 	'''
     }
+    st.markdown(hide_menu,unsafe_allow_html=True)
     st.set_page_config(layout="wide", menu_items=menu_items)
 
     llm_helper = LLMHelper()
